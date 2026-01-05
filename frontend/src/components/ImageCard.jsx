@@ -2,7 +2,7 @@ export default function ImageCard({ image }) {
   return (
     <div className="image-card">
       <img
-        src={`http://localhost:5000${image.imageUrl}`}
+        src={`https://assinment-1-creative-showcase-backend.onrender.com${image.imageUrl}`}
         alt="Artwork"
       />
     </div>
