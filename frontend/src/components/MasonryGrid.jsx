@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/masonry.css";
 
-const BACKEND_URL = "http://localhost:5000"; 
+const BACKEND_URL = "https://assinment-1-creative-showcase-backend.onrender.com"; 
 
 export default function MasonryGrid({ images = [] }) {
   return (
