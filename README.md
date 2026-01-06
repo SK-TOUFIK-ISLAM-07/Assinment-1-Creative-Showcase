@@ -2,10 +2,9 @@
 
 ## Overview
 
-**Creative Showcase** is a full-stack web application developed as a **college academic project**.
-The platform allows artists to upload and manage their artworks while enabling users to explore public galleries created by different artists.
+**Creative Showcase** is a full-stack web application built using the **MERN stack** that enables artists to upload, manage, and showcase their artworks through a modern, responsive interface. The platform supports secure authentication, personalized artist dashboards, public artist profiles, and an explore section for viewing shared artworks.
 
-The project demonstrates practical implementation of **frontend development, backend APIs, authentication, database integration, and cloud deployment**.
+The project demonstrates practical implementation of frontend–backend integration, RESTful API design, authentication, database management, and cloud deployment following real-world development practices.
 
 ---
 
