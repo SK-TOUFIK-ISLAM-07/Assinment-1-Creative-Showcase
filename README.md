@@ -1,10 +1,10 @@
-# Creative Showcase
+# Smart ToDo API
 
 ## Overview
 
-**Creative Showcase** is a full-stack web application built using the **MERN stack** that enables artists to upload, manage, and showcase their artworks through a modern, responsive interface. The platform supports secure authentication, personalized artist dashboards, public artist profiles, and an explore section for viewing shared artworks.
+Smart ToDo API is a RESTful backend application built using **Node.js, Express, and MongoDB** that provides secure and scalable task management functionality. The API enables users to register, authenticate, and manage their personal tasks through protected endpoints using **JWT-based authentication**.
 
-The project demonstrates practical implementation of frontend–backend integration, RESTful API design, authentication, database management, and cloud deployment following real-world development practices.
+The project demonstrates practical backend development concepts including **REST API design, authentication and authorization, database integration, middleware usage, and API testing with Postman**, following real-world development practices suitable for academic and placement evaluations.
 
 ---
 
@@ -12,55 +12,76 @@ The project demonstrates practical implementation of frontend–backend integrat
 
 * User registration and login
 * JWT-based authentication
-* Artwork upload and display
-* Personal artist dashboard
-* Public artist profiles
-* Explore public artworks
-* Responsive user interface
+* Secure, protected routes
+* Create, read, update, and delete (CRUD) tasks
+* User-specific task management
+* MongoDB database integration
+* Centralized error handling
+* Health check endpoint for API status
 
 ---
 
 ## Technology Stack
 
-**Frontend**
-
-* React.js
-* Axios
-* React Router
-* CSS
-
-**Backend**
+### Backend
 
 * Node.js
 * Express.js
 * MongoDB (Mongoose)
 * JSON Web Token (JWT)
-* Multer
+* bcrypt.js
 * CORS
+* dotenv
 
-**Deployment**
+### API Testing & Documentation
 
-* Frontend: Render (Static Site)
-* Backend: Render (Web Service)
-* Database: MongoDB Atlas
+* Postman (Collection-based API documentation)
+
+---
+
+## API Endpoints
+
+### Authentication
+
+* `POST /api/auth/register` – Register a new user
+* `POST /api/auth/login` – Login and receive JWT token
+
+### Tasks (Protected Routes)
+
+* `POST /api/tasks` – Create a new task
+* `GET /api/tasks` – Get all tasks for logged-in user
+* `PUT /api/tasks/:id` – Update a task
+* `DELETE /api/tasks/:id` – Delete a task
+
+### Health Check
+
+* `GET /` – Verify API is running
 
 ---
 
 ## Project Structure
 
 ```
-Creative-Showcase/
-├── backend/
-│   ├── routes/
-│   ├── models/
-│   ├── uploads/
-│   └── server.js
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
-│
+backend/
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   └── taskController.js
+├── middleware/
+│   ├── authMiddleware.js
+│   └── errorMiddleware.js
+├── models/
+│   ├── User.js
+│   └── Task.js
+├── routes/
+│   ├── authRoutes.js
+│   └── taskRoutes.js
+├── server.js
+├── package.json
+├── package-lock.json
+├── .env.example
+├── Smart_ToDo_API.postman_collection.json
 └── README.md
 ```
 
@@ -68,63 +89,58 @@ Creative-Showcase/
 
 ## Environment Variables
 
-### Backend
+Create a `.env` file in the backend directory using the following format:
 
-```
+```env
 PORT= 5000
-MONGO_URI= mongodb+srv://showcase_user:Toufik07@show.bwehuav.mongodb.net/?appName=show
-JWT_SECRET= creativeShowcaseSecretKey
+MONGO_URI= mongodb+srv://todouser:Toufik07@todo-cluster.5blohhk.mongodb.net/todoDB?retryWrites=true&w=majority
+JWT_SECRET= supersecretkey123
 ```
-
-### Frontend
-
-```
-REACT_APP_API_URL= https://assinment-1-creative-showcase-backend.onrender.com
-```
-
 ---
 
 ## Running the Project Locally
 
+### Backend Setup
+
 ```bash
-# Backend
 cd backend
 npm install
-npm start
-
-# Frontend
-cd frontend
-npm install
-npm start
+npm run dev
 ```
 
-Application runs at:
+The API will run at:
 
 ```
-http://localhost:3000
+http://localhost:5000
 ```
 
 ---
 
-## Deployment
+## API Testing (Postman)
 
-* Backend deployed on Render as a Node.js service
-* Frontend deployed on Render as a static React application
-* MongoDB Atlas used for cloud database storage
+* A complete **Postman collection** is included in the repository:
+
+  ```
+  Smart_ToDo_API.postman_collection.json
+  ```
+* The collection demonstrates:
+
+  * Authentication flow
+  * JWT-protected CRUD operations
+* The collection can be imported directly into Postman for testing and evaluation.
 
 ---
-
-## Live Application
-
-- Frontend: https://assinment-1-creative-showcase-frontend.onrender.com/
-- Backend API: https://assinment-1-creative-showcase-backend.onrender.com
 
 ## Learning Outcomes
 
-* Full-stack MERN application development
-* REST API design and integration
-* Authentication and authorization using JWT
-* Cloud deployment and environment configuration
+* RESTful API development using Express.js
+* JWT-based authentication and authorization
+* Secure password handling with bcrypt
+* MongoDB schema design using Mongoose
+* Middleware-based request handling
+* Error handling and API validation
+* Version control and GitHub workflow
+* API documentation using Postman
 
 ---
 
@@ -138,8 +154,8 @@ Brainware University
 
 ## Declaration
 
-This project was developed as part of a **placement drive assignment** to demonstrate practical skills in full-stack web development, system design, and cloud deployment. 
-The implementation reflects real-world development practices and is intended for technical evaluation.
+This project was developed as part of a **placement drive assignment** to demonstrate backend development skills, REST API design, authentication mechanisms, and database integration. The implementation follows industry-relevant practices and is intended solely for **technical and academic evaluation purposes**.
 
 ---
+
 
